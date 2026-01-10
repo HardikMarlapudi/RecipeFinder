@@ -1,1 +1,1 @@
-# ReceipeFinder
+# RecipeFinder
