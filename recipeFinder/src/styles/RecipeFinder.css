@@ -38,7 +38,7 @@
     font-size: 20px;
     font-family:'Courier New', Courier, monospace;
     border: 1px solid;
-    margin: 0 auto 30px auto;
+    margin: 1rem auto;
     transition: 0.3s ease;
     display: block;
     cursor: pointer;
@@ -86,4 +86,8 @@
     font-size: 1rem;
     line-height: 1.5;
     color: #666;
+}
+
+#recipeError {
+    text-align: center;
 }

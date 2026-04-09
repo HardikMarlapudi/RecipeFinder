@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const RecipeFinder = () => {
 
     const [recipe, setRecipe] = useState([]);
     const [search, setSearch] = useState('');
+    const [recipeError, setRecipeError] = useState('No recipe found...');
 
     const findRecipe = async () => {
         try {
-            const response = await fetch(`https://api.api-ninjas.com/v2/recipe?query=${search}`, 
+            const response = await fetch(`https://api.api-ninjas.com/v1/recipe?query=${search}`, 
             {
                 headers: {
                 'X-Api-Key': '1QaEXXiMr42UQHgffVLNDA==uoRjZZaDnhJg5v1O',
@@ -29,13 +30,13 @@ const RecipeFinder = () => {
         <h2>RecipeFinder</h2>
 
         <center>
-            <input 
-                type="search" 
-                id="searchRecipe" 
-                placeholder="Find Recipe..." 
-                value={search} 
-                onChange={(e) => setSearch(e.target.value)}
-            />
+        <input 
+            type="search"
+            id="searchRecipe"
+            value={search}
+            placeholder="Search Recipe..."
+            onChange={(e) => setSearch(e.target.value)}
+        />
         </center>
 
         <button id="findRecipe" onClick={findRecipe}>Search Recipe</button>
@@ -50,7 +51,7 @@ const RecipeFinder = () => {
             </div>
         ))
         ) : (
-            <p>No recipes found.</p>
+            <p id="recipeError" onChange={(e) => setRecipeError(e.target.value)}>{recipeError}</p>
         )}
         </div>
         </div>
