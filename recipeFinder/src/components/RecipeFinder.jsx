@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 const RecipeFinder = () => {
 
     const [recipe, setRecipe] = useState([]);
     const [search, setSearch] = useState('');
-    const [recipeError, setRecipeError] = useState('No recipe found...');
+    const [recipeError, setRecipeError] = useState("No recipe found.");
 
     const findRecipe = async () => {
         try {
