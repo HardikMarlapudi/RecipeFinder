@@ -18,8 +18,8 @@ const RecipeFinder = () => {
 
         const data = await response.json();
         console.log("API response: ", data);
-
         setRecipe(Array.isArray(data) ? data : []);
+            
         } catch (error) {
             console.error("Error fetching recipe:", error);
         }
